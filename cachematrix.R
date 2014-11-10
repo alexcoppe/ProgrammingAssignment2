@@ -1,8 +1,13 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## Write a short comment describing this function
 
+
+#cacheSolve creates a special matrix which in reality is a list containing 4 functions to:
+#set the value of the matrix
+#get the value of the matrix
+#set the inverse of the matrix
+#get the inverse of the matrix
 makeCacheMatrix <- function(x = matrix()) {
   inverse <- NULL
   
@@ -21,10 +26,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+
 
 cacheSolve <- function(x, ...) {
-  ## Return a matrix that is the inverse of 'x'
   inv <- x$getInverse()
   if (!is.null(inv)){
     message("getting cached data")
@@ -38,7 +42,7 @@ cacheSolve <- function(x, ...) {
 }
 
 
-#in.matrix <- matrix(1:16, c(4,4))
+#This chunk of code is for testing pourpose
 in.matrix <- matrix(c(2,3,3,1), c(2,2))
 m <- makeCacheMatrix(in.matrix)
 cacheSolve(m)
