@@ -1,6 +1,9 @@
-## Put comments here that give an overall description of what your
-## functions do
-
+#Matrix inversion is usually a costly computation and their may be some benefit to
+#caching the inverse of a matrix rather than compute it repeatedly.
+#This module contains 2 functions:
+#makeCacheMatrix: This function creates a special "matrix" object that can cache its inverse.
+#cacheSolve: This function computes the inverse of the special "matrix" returned by makeCacheMatrix above.
+#If the inverse has already been calculated  then the cachesolve retrieves the inverse from the cache
 
 
 #cacheSolve creates a special matrix which in reality is a list containing 4 functions to:
@@ -48,5 +51,5 @@ cacheSolve <- function(x, ...) {
 #This chunk of code is for testing pourpose
 in.matrix <- matrix(c(2,3,3,1), c(2,2))
 m <- makeCacheMatrix(in.matrix)
-cacheSolve(m)
+inverse.matrix <- cacheSolve(m)
 
